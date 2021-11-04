@@ -23,11 +23,6 @@ function CounterButtons(props) {
                     props.buttonAction('reinit');
                 }}>ReInit</button>
             </div>
-            <div>
-                <button className="check-btn" onClick={() => {
-                    props.maturityAction()
-                }}>You are...</button>
-            </div>
         </div>
     )
 

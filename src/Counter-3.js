@@ -54,7 +54,7 @@ class Counter3 extends Component {
 
 
         // console.log(action);
-        
+
         this.setState((prevValue, prevProps) => {
 
 
@@ -66,13 +66,13 @@ class Counter3 extends Component {
 
             } else if (action === `subtract-10`) {
 
-                currentCounterValue -= 10; 
+                currentCounterValue -= 10;
 
             } else {
 
                 currentCounterValue = prevProps.initValue;
             }
-        
+
 
             return ({
                 counterValue: currentCounterValue
@@ -88,8 +88,26 @@ class Counter3 extends Component {
 
         // console.log(`maturity function!`);
 
+        let maturityResult = '';
+
+        if (ageNumber < 10) {
+
+            maturityResult = 'You are a child';
+
+        } else if (10 < ageNumber < 20) {
+
+            maturityResult = 'You are a teenager';
+
+        } else {
+
+            maturityResult = 'You are an adult';
+
+        }
+
+
         return ({
-           
+
+            maturityResult
 
         });
     }
@@ -104,17 +122,24 @@ class Counter3 extends Component {
                     <button onClick={this.subtractAge}>
                         -
                     </button>
-                   <Display displayValue={this.state.counterValue}/>
+                    <Display displayValue={this.state.counterValue} />
                     <button onClick={this.addAge}>
                         +
                     </button>
                     years old ;)
                 </div>
                 <div>
-                    <CounterButtons buttonAction={this.otherButtons} maturityAction={this.maturity}/>
+                    <CounterButtons buttonAction={this.otherButtons} maturityAction={this.maturity} />
+
+                    <button className="check-btn" onClick={() => {
+                        this.maturity(this.state.counterValue)
+                    }}>You are...</button>
+
                     <p className="maturity">
-                        {this.state.counterValue}
+                        {/* {this.maturity(this.state.counterValue)} */}
                     </p>
+
+
                 </div>
             </div>
         )

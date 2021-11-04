@@ -10,3 +10,11 @@
     letter-spacing: 1px;
 }
 
+
+/* p.maturity {
+    display: none;
+} */
+
+.show-paragraph {
+    display: inline;
+}
