@@ -1,0 +1,12 @@
+.div-my-age {
+    display: inline;
+}
+
+
+span.my-age {
+    color: darkslateblue;
+    font-weight: bold;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-bottom: 1px solid purple;
+}

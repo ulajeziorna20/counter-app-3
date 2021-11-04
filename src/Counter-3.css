@@ -1,0 +1,12 @@
+.counter-3 {
+    text-align: center;
+    border: 3px double green;
+    padding: 40px;
+    width: 400px;
+    margin: 30px auto;
+    background-color: lightgoldenrodyellow;
+    color: black;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+

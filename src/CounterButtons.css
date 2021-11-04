@@ -1,0 +1,35 @@
+.counting-btn {
+    margin: 10px 0 10px 10px;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bolder;
+    color: white;
+    background-color: darkolivegreen;
+    border-color: darkolivegreen;
+    outline: 0;
+}
+
+
+.counting-btn:hover {
+    color: white;
+    background-color: darkgreen;
+    border-color: white;
+}
+
+
+.check-btn {
+    margin-right: 10px;
+    padding: 5px 10px;
+    background-color: grey;
+    border-color: grey;
+    font-size: 15px;
+    color: white;
+}
+
+.check-btn:hover {
+    background-color: darkgrey;
+    border-color: blue;
+    color: blue;
+
+}
