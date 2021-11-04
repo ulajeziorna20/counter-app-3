@@ -13,9 +13,32 @@ class Counter3 extends Component {
         super(props)
 
         this.state = {
-            counterValue: this.props.initValue
+            counterValue: this.props.initValue,
+            displayMaturityParagraph: 'true'
         };
 
+    }
+
+
+    showHideParagraph = () => {
+
+        this.setState((prevState) => {
+
+
+            let displayState = this.state.displayMaturityParagraph;
+
+            if (displayState === 'true') {
+                displayState = 'false'
+    
+            } else {
+                displayState = 'true'
+            }
+
+        
+            return ({
+                displayMaturityParagraph: displayState
+            })
+        })
     }
 
 
@@ -58,7 +81,7 @@ class Counter3 extends Component {
         this.setState((prevValue, prevProps) => {
 
 
-            let currentCounterValue = this.state.counterValue;
+            let currentCounterValue = prevValue.counterValue;
 
             if (action === `add-10`) {
 
@@ -84,37 +107,27 @@ class Counter3 extends Component {
 
 
 
-    maturity = (ageNumber) => {
-
-        // console.log(`maturity function!`);
-
-        let maturityResult = '';
-
-        if (ageNumber < 10) {
-
-            maturityResult = 'You are a child';
-
-        } else if (10 < ageNumber < 20) {
-
-            maturityResult = 'You are a teenager';
-
-        } else {
-
-            maturityResult = 'You are an adult';
-
-        }
-
-
-        return ({
-
-            maturityResult
-
-        });
-    }
 
 
 
     render() {
+
+
+
+        let maturityPerson = 'adult';
+
+
+        if (this.state.counterValue <= 10) {
+
+            maturityPerson = 'child';
+
+        } else if (this.state.counterValue <= 20) {
+
+            maturityPerson = 'teenager';
+
+        }
+
+
         return (
             <div className="counter-3">
                 <div>
@@ -129,14 +142,12 @@ class Counter3 extends Component {
                     years old ;)
                 </div>
                 <div>
-                    <CounterButtons buttonAction={this.otherButtons} maturityAction={this.maturity} />
+                    <CounterButtons buttonAction={this.otherButtons}
+                        buttonMaturity={this.showHideParagraph} />
 
-                    <button className="check-btn" onClick={() => {
-                        this.maturity(this.state.counterValue)
-                    }}>You are...</button>
 
                     <p className="maturity">
-                        {/* {this.maturity(this.state.counterValue)} */}
+                        You are {(this.state.displayMaturityParagraph ? maturityPerson : '')}
                     </p>
 
 

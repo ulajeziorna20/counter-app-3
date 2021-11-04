@@ -19,9 +19,10 @@ function CounterButtons(props) {
                 }}>Subtract 10</button>
 
                 <button className="counting-btn" onClick={() => {
-
                     props.buttonAction('reinit');
                 }}>ReInit</button>
+                <button className="check-btn" onClick={props.buttonMaturity}>{(props.buttonMaturity ? 'Hide' : 'Show')} maturity of person...</button>
+
             </div>
         </div>
     )
