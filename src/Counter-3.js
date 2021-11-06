@@ -14,7 +14,7 @@ class Counter3 extends Component {
 
         this.state = {
             counterValue: this.props.initValue,
-            displayMaturityParagraph: 'true'
+            displayMaturityParagraph: true
         };
 
     }
@@ -25,13 +25,13 @@ class Counter3 extends Component {
         this.setState((prevState) => {
 
 
-            let displayState = this.state.displayMaturityParagraph;
+            let displayState = prevState.displayMaturityParagraph;
 
-            if (displayState === 'true') {
-                displayState = 'false'
+            if (displayState) {
+                displayState = false
     
             } else {
-                displayState = 'true'
+                displayState = true
             }
 
         
@@ -147,7 +147,7 @@ class Counter3 extends Component {
 
 
                     <p className="maturity">
-                        You are {(this.state.displayMaturityParagraph ? maturityPerson : '')}
+                        {(this.state.displayMaturityParagraph ? 'You are ' + maturityPerson : '')}
                     </p>
 
 
